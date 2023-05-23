@@ -54,4 +54,11 @@ public class PointService{
         pointRepository.deleteById(cd_ponto);
         return newPoint;
     }
+    
+    @GetMapping("/findbyid/{cd_ponto}")
+    public Optional<Point> findById(@PathVariable Integer cd_ponto){
+        Optional<Point> Point = pointRepository.findById(cd_ponto);
+        return Point;
+    }
+    
 }
